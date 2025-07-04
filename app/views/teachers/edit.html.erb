@@ -1,0 +1,19 @@
+<h1>Edit data</h1>
+<%= form_with(model: @teacher, local: true) do |form| %>
+	<div>
+		<%= form.label :name  %>
+		<%= form.text_area :name %>
+	</div>
+	<div>
+		<%= form.label :subj_speclization %>
+		<%= form.text_area :subj_speclization %>
+	</div>
+	<div>
+		<%= form.label :mobile %>
+		<%= form.text_area :mobile %>
+	</div>
+	<div>
+		<%= form.submit "submit"%>
+		<%= form.submit "Cancel"%>
+	</div>
+<% end%>

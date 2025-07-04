@@ -5,7 +5,7 @@ class TeachersController < ApplicationController
   end
 
   def new
-    @teacher=Teacher.new()
+    @teacher=Teacher.new
   end
 
   def show
@@ -41,6 +41,7 @@ class TeachersController < ApplicationController
   end
 
     private
+
     def teacher_params
       params.require(:teacher).permit(:name, :subj_speclization, :mobile)
     end

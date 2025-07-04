@@ -1,20 +1,39 @@
-<h1>create data</h1>
-<%= form_with(model: @doctor, local: true) do |form| %>
-	<div>
-		<%= form.label :name  %>
-		<%= form.text_area :body %>
-	</div>
-	<div>
-		<%= form.label :specalization %>
-		<%= form.text_area :body %>
-	</div>
-	<div>
-		<%= form.label :mobile_no %>
-		<%= form.text_area :body %>
-	</div>
-	<div>
-		<%= form.submit "submit"%>
-		<%= form.submit "Cancel"%>
-	</div>
-	<%= link_to "Home", teachers_url %>
-<% end %>
+<html>
+	<head>
+		<style>
+			h1{text-align: center;}
+			      body {font-size: 50px;}
+		</style>
+	</head>
+	<body>
+		<h1 >Mast Technology collage</h1>
+		<p> Home Page </p>
+		<%= link_to "New Teacher", new_teacher_url %>
+	</body>
+</html>
+<h2>Doctors List</h2>
+<table border="1" cellpadding="10">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Specialization</th>
+			<th>Mobile</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @teachers.each do |teacher| %>
+			<tr>
+				<td><%= teacher.name %></td>
+				<td><%= teacher.subj_speclization %></td>
+				<td><%= teacher.mobile %></td>
+				<td>
+					<%= link_to 'Show', teacher_path(teacher) %> |
+					<%= link_to 'edit', edit_teacher_path(teacher) %> |
+					<%= link_to 'Update', edit_teacher_url(teacher) %> |
+					<%= link_to 'Delete', teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' } %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
