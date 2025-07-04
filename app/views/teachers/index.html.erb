@@ -1,0 +1,20 @@
+<h1>create data</h1>
+<%= form_with(model: @doctor, local: true) do |form| %>
+	<div>
+		<%= form.label :name  %>
+		<%= form.text_area :body %>
+	</div>
+	<div>
+		<%= form.label :specalization %>
+		<%= form.text_area :body %>
+	</div>
+	<div>
+		<%= form.label :mobile_no %>
+		<%= form.text_area :body %>
+	</div>
+	<div>
+		<%= form.submit "submit"%>
+		<%= form.submit "Cancel"%>
+	</div>
+	<%= link_to "Home", teachers_url %>
+<% end %>
